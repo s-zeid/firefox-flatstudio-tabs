@@ -59,10 +59,17 @@
  padding-left: 1px !important;
 }
 
+/* Fix extra space between rows of tabs with Tab Mix Plus multibar mode */
+.tabbrowser-tabs[multibar] .tabbrowser-tab {
+ vertical-align: top !important;
+}
+
 /* margin-right has to be done on .tab-stack, not tab; otherwise pinned tabs
    will not work correctly in overflow mode */
 .tabbrowser-tabs .tab-stack {
+ min-height: 26px !important;
  height: 26px !important;  /* That's Numberwang! */
+ max-height: 26px !important;
  margin-right: 4px !important;  /* That's Numberwang! */
 }
 
@@ -188,8 +195,32 @@
 
 /* Australis-specific */
 
+.tabbrowser-tabs:not([overflow]) {
+ margin-bottom: 3px !important;  /* That's... *not* Numberwang. */
+}
+
+/* Fix tabbar height */
+#tabbrowser-tabs {
+ min-height: 26px !important;
+ height: 26px !important;
+}
+
+/* Fix toolbar button positions */
 #TabsToolbar {
- padding-bottom: 2px !important;  /* That's... *not* Numberwang. */
+ margin-top: calc(26px - 31px + 3px) !important;
+}
+.tabbrowser-tabs {
+ margin-top: calc(31px - 26px - 3px) !important;
+}
+
+/* Fix scrollbutton icon and shadow positions with above hack */
+#TabsToolbar .scrollbutton-up,
+#TabsToolbar .scrollbutton-down {
+ margin-bottom: calc(31px - 26px - 1px) !important;
+}
+#TabsToolbar .arrowscrollbox-overflow-start-indicator,
+#TabsToolbar .arrowscrollbox-overflow-end-indicator {
+ background-size: 100% calc(100% - 2px) !important;
 }
 
 .tabbrowser-tabs tab[image]:not([pinned]) .tab-icon-image + .tab-text {
@@ -209,6 +240,11 @@
  width: 26px !important;
  margin: 0 !important;
  background: none !important;
+}
+
+/* Fix position of new tab button with Tab Mix Plus multibar mode */
+.tabbrowser-tabs[tabmix_australis="true"][multibar] .tabs-newtab-button {
+ margin-top: -3px !important;
 }
 
 .tabbrowser-tabs .tabs-newtab-button > .toolbarbutton-icon {
@@ -252,6 +288,17 @@
 #PersonalToolbar ~ #TabsToolbar tab:not([pinned]) .tab-icon-image + .tab-text,
 #PersonalToolbar ~ #TabsToolbar tab[image]:not([pinned]) .tab-icon-image + .tab-text {
  margin-left: 2px !important
+}
+
+/* Undo some Australis fixes */
+
+#PersonalToolbar ~ #TabsToolbar .tabbrowser-tabs:not([overflow]),
+#PersonalToolbar ~ #TabsToolbar .scrollbutton-up,
+#PersonalToolbar ~ #TabsToolbar .scrollbutton-down {
+ margin-bottom: 0 !important;
+}
+#PersonalToolbar ~ #TabsToolbar, #PersonalToolbar ~ #TabsToolbar .tabbrowser-tabs {
+ margin-top: 0 !important;
 }
 
 /* Restore toolbar button style new tab button */
@@ -312,6 +359,16 @@
 
 #messengerWindow .contentTabToolbox {
  border-bottom-style: none !important;
+}
+
+/* Fix toolbar button positions */
+#messengerWindow #TabsToolbar > :not(#tabcontainer) {
+ margin-bottom: -2px !important;
+}
+
+/* Undo some Firefox fixes */
+#messengerWindow .tabbrowser-tabs:not([overflow]) {
+ margin-bottom: 0 !important;
 }
 
 /* End Thunderbird-specific */
