@@ -1,0 +1,10 @@
+Firefox or Thunderbird FlatStudio Tabs (like tabs-2.css)
+(c) 2013–2015 Scott Zeid <s.zeid.me>.
+
+Contains code from Mozilla Firefox 29, specifically
+<chrome://browser/skin/browser.css> and
+<chrome://global/skin/icons/close.svg>.
+
+This Source Code Form is subject to the terms of the Mozilla Public
+License, v. 2.0. If a copy of the MPL was not distributed with this
+file, You can obtain one at https://mozilla.org/MPL/2.0/.
