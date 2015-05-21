@@ -92,6 +92,11 @@
  color: inherit !important;
 }
 
+/* Fix extra padding caused by <https://hg.mozilla.org/mozilla-central/diff/666746987b4b/browser/themes/shared/tabs.inc.css#l1.12> */
+.tabbrowser-tabs .tab-content[pinned] {
+ -moz-padding-end: 0 !important;
+}
+
 .tabbrowser-tabs .tab-content[selected=true] {
  color: HighlightText !important;
 }
