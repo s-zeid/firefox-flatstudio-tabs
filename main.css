@@ -223,6 +223,11 @@
  background-size: 100% calc(100% - 2px) !important;
 }
 
+.tabbrowser-tabs .tab-content[pinned] .tab-throbber,
+.tabbrowser-tabs .tab-content[pinned] .tab-icon-image {
+ -moz-margin-end: 5px !important;
+}
+
 .tabbrowser-tabs tab[image]:not([pinned]) .tab-icon-image + .tab-text {
  margin-left: -1px !important
 }
@@ -299,6 +304,11 @@
 }
 #PersonalToolbar ~ #TabsToolbar, #PersonalToolbar ~ #TabsToolbar .tabbrowser-tabs {
  margin-top: 0 !important;
+}
+
+#PersonalToolbar ~ #TabsToolbar .tabbrowser-tabs .tab-content[pinned] .tab-throbber,
+#PersonalToolbar ~ #TabsToolbar .tabbrowser-tabs .tab-content[pinned] .tab-icon-image {
+ -moz-margin-end: 2px !important;
 }
 
 /* Restore toolbar button style new tab button */
