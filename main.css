@@ -118,6 +118,11 @@
  margin-top: 0 !important;
 }
 
+.tabbrowser-tabs .tab-content:not([pinned]) .tab-throbber,
+.tabbrowser-tabs .tab-content:not([pinned]) .tab-icon-image {
+ -moz-margin-end: 5px !important;
+}
+
 .tabbrowser-tabs .tab-close-button {
  margin: -1px 0 0 5px !important;
 }
@@ -379,6 +384,11 @@
 /* Undo some Firefox fixes */
 #messengerWindow .tabbrowser-tabs:not([overflow]) {
  margin-bottom: 0 !important;
+}
+
+#messengerWindow .tabbrowser-tabs .tab-content:not([pinned]) .tab-throbber,
+#messengerWindow .tabbrowser-tabs .tab-content:not([pinned]) .tab-icon-image {
+ -moz-margin-end: 6px !important;
 }
 
 /* End Thunderbird-specific */
